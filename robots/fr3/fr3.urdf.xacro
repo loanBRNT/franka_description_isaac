@@ -45,6 +45,9 @@
 
   <!-- For a multi arm setup, we need a threaded robot running async-->
   <xacro:arg name="multi_arm" default="false" />
+
+  <!-- Should the robot be spawned in Isaac Sim -->
+  <xacro:arg name="isaac" default="false" />
   
   <!-- Append an underscore to the user-provided prefix, if non-empty. -->
   <xacro:property name="prefix" value="$(arg arm_prefix)"/>
@@ -66,7 +69,8 @@
                       gazebo_effort="$(arg gazebo_effort)"
                       no_prefix="$(arg no_prefix)"
                       arm_prefix="$(arg arm_prefix)"
-                      connected_to= "base">
+                      connected_to= "base"
+                      isaac="$(arg isaac)">
   </xacro:franka_robot>
 
 </robot>
