@@ -1,5 +1,10 @@
 # Franka Description
 
+## Adds by Loan BERNAT
+- Adding franka_controllers_params xacro argument to load customized controllers yaml file.
+- Adding isaac xacro agument to use Ros2TopicBased as the Hardware Interface for ros_control.
+- Adding urdf/fr3.urdf, urdf to directly deploy into Isaac Sim.
+
 ## Overview
 
 The Franka Description repository offers all Franka Robotics models. It includes detailed 3D models and essential robot parameters, crucial for simulating these robots in various environments. Additionally, the repository provides a feature to create URDFs (Unified Robot Description Format) for the selected Franka robot model.
