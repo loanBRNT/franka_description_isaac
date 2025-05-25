@@ -48,6 +48,9 @@
 
   <!-- Should the robot be spawned in Isaac Sim -->
   <xacro:arg name="isaac" default="false" />
+
+  <!-- Allow to pass custom controllers path to ros2 interface -->
+  <xacro:arg name="franka_controllers_params" default="$(find franka_gazebo_bringup)/config/franka_gazebo_controllers.yaml" />
   
   <!-- Append an underscore to the user-provided prefix, if non-empty. -->
   <xacro:property name="prefix" value="$(arg arm_prefix)"/>
@@ -70,7 +73,8 @@
                       no_prefix="$(arg no_prefix)"
                       arm_prefix="$(arg arm_prefix)"
                       connected_to= "base"
-                      isaac="$(arg isaac)">
+                      isaac="$(arg isaac)"
+                      franka_controllers_params="$(arg franka_controllers_params)">
   </xacro:franka_robot>
 
 </robot>

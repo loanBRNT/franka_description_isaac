@@ -11,7 +11,8 @@
              gazebo_effort:=^|false
              arm_prefix:=''
              multi_arm:=false
-             isaac:=^|false">
+             isaac:=^|false
+             franka_controllers_params:=''">
              
     <xacro:property name="arm_prefix_modified" value="${'' if arm_prefix == '' else arm_prefix + '_'}" />
     <ros2_control name="${arm_prefix_modified}FrankaHardwareInterface" type="system">
@@ -88,7 +89,7 @@
     <xacro:if value="${gazebo}">
       <gazebo>
         <plugin filename="franka_ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-          <parameters>$(find franka_gazebo_bringup)/config/franka_gazebo_controllers.yaml</parameters>
+          <parameters>$(arg franka_controllers_params)</parameters>
         </plugin>
       </gazebo>
     </xacro:if>

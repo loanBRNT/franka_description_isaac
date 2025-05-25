@@ -22,7 +22,8 @@
                       arm_prefix:=''
                       connected_to:='base'
                       multi_arm:=false
-                      isaac:=false">
+                      isaac:=false
+                      franka_controllers_params:=''">
     <xacro:include filename="$(find franka_description)/robots/common/utils.xacro" />
 
     <xacro:include filename="$(find franka_description)/robots/common/franka_arm.xacro" />
@@ -162,6 +163,7 @@
           arm_prefix="${arm_prefix}"
           multi_arm="$(arg multi_arm)"
           isaac="$(arg isaac)"
+          franka_controllers_params="$(arg franka_controllers_params)"
       />
     </xacro:if>
 
